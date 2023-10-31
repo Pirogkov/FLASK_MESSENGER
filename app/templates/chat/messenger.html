@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+
+{% block chat %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/moment.js') }}"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <main role="main" class="col-md-12">
+          <div class="pt-3 pb-2 mb-3 border-bottom text-center chat-head" >
+            <h1 class="h2 text-center">Чат МРГ Воронеж</h1>
+          </div>
+            </main>
+<div class="panel messages-panel">
+    <div class="chat-body" id="messageFeed"></div>
+    <div class="chat-footer">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="message">
+        <div class="input-group-append">
+         <button class="btn btn-outline-secondary send-message-button btn-info" type="submit" id="messageBtn"  onClick="sendMessage()">Отправить<i class="fa fa-send fly"></i></button>
+
+        </div>
+      </div>
+    </div>
+</div>
+<!--    <div class="chat-footer"><textarea class="send-message-text">-->
+
+<!--    </textarea><label class="upload-file">-->
+<!--        <input type="file" id="message" required=""> <i class="fa fa-paperclip"></i> </label>-->
+<!--        <button type="button" class="send-message-button btn-info" onClick="sendMessage()"> <i class="fa fa-send"></i> </button>-->
+
+
+
+
+<!--    <div class="container-fluid">-->
+<!--      <div class="row">-->
+<!--        <main role="main" class="col-md-12">-->
+<!--          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">-->
+<!--            <h1 class="h2">Bootstrap Chat</h1>-->
+<!--          </div>-->
+<!--            <ul class="list-unstyled text-break" id="messageFeed">-->
+<!--            </ul>-->
+<!--           <div class="input-group mb-3">-->
+<!--            <input type="text" class="form-control" id="messageTextarea">-->
+<!--            <div class="input-group-append">-->
+<!--              <button class="btn btn-outline-secondary" type="button" id="send">Send</button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </main>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<!--      Добавить integrity !!!! Обязательно!-->
+<!--        <link type="text/javascript" href="{{ url_for('static', filename='js/socket.io.js', _external=True) }}">-->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/sockets.js') }}"></script>
+
+{% endblock %}

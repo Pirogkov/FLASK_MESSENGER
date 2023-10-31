@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from 'bootstrap5/table.html' import render_table %}
+
+
+
+{% block operator_room %}
+    <div class="row">
+        <div class="row justify-content-center" >
+            <div class="col-md-12 justify-content-center">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Зайти в комнату</th>
+                      <th scope="col">Номер комнаты</th>
+                        <th scope="col">Дата создания комнаты</th>
+                      <th scope="col">Количество новых сообщений</th>
+                      <th scope="col">Количество людей в комнате</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                {% for room in users_rooms %}
+                    <tr>
+                      <th scope="row">1</th>
+                      <td><a href="{{ url_for('chat.operator_joinroom', room_name=room.room) }}">Войти в комнату</a></td>
+                      <td>{{ room.room }}</td>
+                      <td>{{ room.timestamp }}</td>
+                      <td>{{ room.new_messages }}</td>
+                      <td>{{ room.active_users }}</td>
+                    </tr>
+                {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
